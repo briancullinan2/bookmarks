@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bookmarks to PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="bookmarks.css">
+</head>
+
+<body>
+
+<!-- wanted to build for a long time, way to drop bookmarks, good for making bookmarks searchable in a more traditional format than trying to install a browser extension, then trying to use it on mobile, then trying to export content from extension.  -->
+
+<!-- combine: 
+  https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop
+  https://www.appcoda.com/restful-api-tutorial-how-to-upload-files-to-server/
+  https://www.w3schools.com/nodejs/nodejs_uploadfiles.asp
+
+-->
+
+<header><a href="/">Bookmarks to PDF</a></header>
+<div class="container">
+  <div id="bookmark-list">
+    <textarea></textarea>
+  </div>
+</div>
+
+<!-- TODO: click here to upload a file button not to annoy people on mobile -->
+
+<div class="container">
+  <div id="drop_zone" class="dragdrop">
+    <input type="file" id="upload_file" />
+    <label for="upload_file"><span>Drop bookmarks here, <br />or tap to upload file</span></label>
+  </div>
+</div>
+
+<div class="container">
+  <ol class="bookmarks"></ol>
+</div>
+
+</body>
+<script type="application/javascript" src="bookmarks.js"></script>
+
+</script>
+</html>

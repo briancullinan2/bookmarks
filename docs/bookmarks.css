@@ -1,0 +1,136 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  background: rgb(51, 51, 68);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+}
+
+body {
+  background: url(./neural_network_inverted_darkened.jpeg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  font-size: xx-large;
+  text-align: center;
+  padding: 20px
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.decks {
+  text-align: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.decks li {
+  margin: 20px;
+  padding: 0;
+  font-size: large;
+  background: white;
+  border: 3px solid #eee;
+  border-radius: 10px;
+}
+
+.decks li a {
+  padding: 40px;
+  display: block;
+  color: #222;
+  text-decoration: none;
+}
+
+.container {
+  text-align: center;
+  margin: 20px auto;
+  display: flex;
+  width: auto;
+  justify-content: center;
+}
+
+.dragdrop span {
+  pointer-events: none;
+}
+
+.dragdrop {
+  border: 3px dashed #eee;
+  border-radius: 10px;
+  background: white;
+  color: #222;
+}
+
+.dragdrop label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  min-height: 100px;
+  min-width: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+}
+
+.dragdrop.dragging {
+  border: 3px solid #eee;
+  border-radius: 10px;
+}
+
+.dragdrop.dragging label {
+  padding: 80px;
+}
+
+#upload_file {
+  height: 1px;
+  width: 1px;
+  opacity: 0.01;
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+}
+
+#bookmark-list {
+  position: relative;
+
+}
+
+#bookmark-list::after {
+  content: "Paste bookmarks.html";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #222;
+  display: block;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#bookmark-list:hover::after,
+#bookmark-list:active::after,
+#bookmark-list:focus::after,
+#bookmark-list:focus-within::after {
+  opacity: 0;
+}
+
+#bookmark-list textarea {
+  border: 3px solid #eee;
+  padding: 20px;
+  font-size: large;
+  background: white;
+  color: #222;
+  border-radius: 10px;
+}
+
