@@ -51,7 +51,7 @@ function uploadFile(req, res, next) {
   }
 
   if(req.body.data.length == 0 && req.body.part > 0) {
-    // begin converstion process
+    // TODO: begin converstion process, will use Google takeout export first, because i can copy it from jupyter_ops, and i just did the sqlite solution for resume
 
   }
 

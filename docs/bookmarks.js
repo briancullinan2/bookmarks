@@ -62,6 +62,7 @@ if(typeof window != 'undefined') {
   window.addEventListener('load', function () {
     let dropzone = document.getElementById('drop_zone')
     let inputfile = document.getElementById('upload_file')
+    let bookmarks = document.getElementById('bookmark_text')
 
     dropzone.addEventListener('dragenter', function () {
       dropzone.classList.add('dragging')
@@ -80,6 +81,22 @@ if(typeof window != 'undefined') {
       uploadFiles({
         dataTransfer: {
           files: inputfile.files
+        }
+      })
+    })
+
+    // maybe something here will be useful before the conversion to web3/web4? maybe some sort of preservation technique? maybe uploading content collected with this app to github arctic storage? probably i'm just wasting time because i lack instruction and discipline and can't "see" the problem
+    bookmarks.addEventListener('change', function (ev) {
+      ev.preventDefault()
+      uploadFiles({
+        dataTransfer: {
+          files: [{
+            name: 'plain text',
+            size: bookmarks.value.length,
+            arrayBuffer: function () {
+              return (new TextEncoder()).encode(bookmarks.value)
+            }
+          }]
         }
       })
     })

@@ -104,7 +104,7 @@ header a {
 
 #bookmark-list {
   position: relative;
-
+  width: 50%;
 }
 
 #bookmark-list::after {
@@ -132,5 +132,10 @@ header a {
   background: white;
   color: #222;
   border-radius: 10px;
+  min-height: 100px;
+  min-width: 200px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
