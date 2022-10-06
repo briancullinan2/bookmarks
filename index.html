@@ -19,7 +19,16 @@
 -->
 
 <header><a href="/">Bookmarks to PDF</a></header>
-<div class="container">
+
+<input type="radio" id="upload" name="upload" checked="checked" />
+<input type="radio" id="list" name="upload" />
+<input type="radio" id="compare" name="upload" />
+
+<label for="upload">Upload Bookmarks</label>
+<label for="list">List Bookmarks</label>
+<label for="compare">Compare Bookmarks</label>
+
+<div class="container upload">
   <div id="bookmark-list">
     <textarea id="bookmark_text"></textarea>
   </div>
@@ -27,15 +36,17 @@
 
 <!-- TODO: click here to upload a file button not to annoy people on mobile -->
 
-<div class="container">
+<div class="container upload">
   <div id="drop_zone" class="dragdrop">
     <input type="file" id="upload_file" />
     <label for="upload_file"><span>Drop bookmarks here, <br />or tap to upload file</span></label>
   </div>
 </div>
 
-<div class="container">
-  <ol class="bookmarks"></ol>
+<div class="container folder">
+  <ol class="bookmarks">
+    
+  </ol>
 </div>
 
 </body>

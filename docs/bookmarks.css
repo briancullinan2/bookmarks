@@ -14,6 +14,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 header {
@@ -105,6 +106,8 @@ header a {
 #bookmark-list {
   position: relative;
   width: 50%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 #bookmark-list::after {
@@ -137,5 +140,141 @@ header a {
   width: 100%;
   max-width: 100%;
   max-height: 100%;
+  box-sizing: border-box;
+}
+
+label[for="list"],
+label[for="compare"],
+label[for="upload"] {
+  border: 5px solid transparent;
+  border-radius: 10px;
+  background: #226;
+  position: relative;
+  display: inline-block;
+  background-clip: padding-box;
+  z-index: unset;
+  list-style: none;
+  text-align: left;
+}
+
+label[for="list"],
+label[for="compare"],
+label[for="upload"] {
+  display: block;
+  text-decoration: none;
+  color: white;
+  min-width: 200px;
+  text-align: center;
+}
+
+label[for="list"],
+label[for="compare"],
+label[for="upload"] {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+label[for="list"],
+label[for="compare"],
+label[for="upload"] {
+  display: inline-block;
+}
+
+
+#compare,
+#list,
+#upload {
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+}
+
+#compare:checked ~ label[for="compare"],
+#list:checked ~ label[for="list"],
+#upload:checked ~ label[for="upload"] {
+  color: #226;
+  background-color: white;
+}
+
+
+
+.bookmarks,
+.bookmarks li,
+.bookmarks ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bookmarks ol li {
+  padding: 0 0 0 20px;
+}
+
+
+
+.bookmarks a,
+.bookmarks label {
+  background:rgb(26, 26, 35);
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  cursor: pointer;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#list:checked ~ .container.upload,
+.container.folder {
+  display:none;
+}
+
+.container.folder {
+  max-width: 300px;
+  margin-left:0;
+  text-align: left;
+  overflow-y: scroll;
+  position: absolute;
+  top: 200px;
+  bottom:0;
+  height: auto;
+}
+
+#list:checked ~ .container.folder {
+  display:block;
+}
+
+
+
+@media all and (max-width: 700px) {
+
+  #bookmark-list {
+    width: 80%;
+  }
+
+}
+
+
+@media all and (max-width: 400px) {
+
+  #bookmark-list {
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  .dragdrop label {
+    min-width: unset;
+  }
+
+  .dragdrop {
+    margin: 0 20px;
+  }
+
 }
 

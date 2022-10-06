@@ -1,5 +1,5 @@
 
-const CHUNK_SIZE = 1000
+const CHUNK_SIZE = 1024 * 10
 
 const SAVE_URL = '/fileput'
 const NON_ALPHA_NUM = (/[^a-z0-9-_]/gi)
@@ -27,11 +27,11 @@ async function uploadFiles(ev) {
     return
   }
   const currentFile = files[0]
-  const chunks = currentFile.size / CHUNK_SIZE
+  const chunks = Math.ceil(currentFile.size / CHUNK_SIZE)
   const fileData = new Uint8Array(await currentFile.arrayBuffer())
   let fileKey
 
-  for(let i = 0; i < Math.ceil(chunks) + 1; i++) {
+  for(let i = 0; i < chunks + 1; i++) {
     let segmentData = fileData.slice(i * CHUNK_SIZE, i * CHUNK_SIZE + CHUNK_SIZE)
     let putData = {
       part: i,
@@ -52,7 +52,13 @@ async function uploadFiles(ev) {
     if(i == 0) {
       fileKey = Array.from(new Uint8Array(await response.arrayBuffer()))
           .map(c => String.fromCharCode(c)).join('')
-      debugger
+    }
+    if(i == chunks) {
+      let bookmarkList = Array.from(new Uint8Array(await response.arrayBuffer()))
+          .map(c => String.fromCharCode(c)).join('')
+      // TODO: display fancy bookmarks folder like Opera, make list look flattened, then have toggle-able folders
+      let bookmarks = JSON.parse(bookmarkList)
+
     }
   }
 }
