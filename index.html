@@ -23,10 +23,15 @@
 <input type="radio" id="upload" name="upload" checked="checked" />
 <input type="radio" id="list" name="upload" />
 <input type="radio" id="compare" name="upload" />
+<input type="radio" id="queue" name="upload" />
 
-<label for="upload">Upload Bookmarks</label>
-<label for="list">List Bookmarks</label>
-<label for="compare">Compare Bookmarks</label>
+<label class="radio-button" for="upload">Upload Bookmarks</label>
+<label class="radio-button" for="list">List Bookmarks</label>
+<label class="radio-button" for="compare">Compare Bookmarks</label>
+<label class="radio-button" for="queue">Download Queue</label>
+
+<input type="radio" id="listview" name="views" checked="checked" />
+<input type="radio" id="thumbs" name="views" />
 
 <input name="folder-toggle" />
 
@@ -44,6 +49,13 @@
     <label for="upload_file"><span>Drop bookmarks here, <br />or tap to upload file</span></label>
   </div>
 </div>
+
+<div class="container options">
+  <label class="radio-button" for="listview">List View</label>
+  <label class="radio-button" for="thumbs">Thumbnails</label>
+
+</div>
+
 
 <div class="container folder">
   <ol class="bookmarks" id="bookmark-folders">

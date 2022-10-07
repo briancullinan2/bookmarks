@@ -66,7 +66,7 @@ header a {
 }
 
 .dragdrop {
-  border: 3px dashed #eee;
+  border: 3px dashed #aaa;
   border-radius: 10px;
   background: white;
   color: #222;
@@ -143,9 +143,7 @@ header a {
   box-sizing: border-box;
 }
 
-label[for="list"],
-label[for="compare"],
-label[for="upload"] {
+.radio-button {
   border: 5px solid transparent;
   border-radius: 10px;
   background: #226;
@@ -157,9 +155,7 @@ label[for="upload"] {
   text-align: left;
 }
 
-label[for="list"],
-label[for="compare"],
-label[for="upload"] {
+.radio-button {
   display: block;
   text-decoration: none;
   color: white;
@@ -167,17 +163,13 @@ label[for="upload"] {
   text-align: center;
 }
 
-label[for="list"],
-label[for="compare"],
-label[for="upload"] {
+.radio-button {
   display: block;
   cursor: pointer;
   padding: 10px;
 }
 
-label[for="list"],
-label[for="compare"],
-label[for="upload"] {
+.radio-button {
   display: inline-block;
 }
 
@@ -185,6 +177,9 @@ label[for="upload"] {
 #compare,
 #list,
 #upload,
+#queue,
+#listview,
+#thumbs,
 .folder-toggle {
   opacity: 0;
   height: 1px;
@@ -196,7 +191,10 @@ label[for="upload"] {
 
 #compare:checked ~ label[for="compare"],
 #list:checked ~ label[for="list"],
-#upload:checked ~ label[for="upload"] {
+#upload:checked ~ label[for="upload"],
+#queue:checked ~ label[for="queue"],
+#listview:checked ~ * label[for="listview"],
+#thumbs:checked ~ * label[for="thumbs"] {
   color: #226;
   background-color: white;
 }
@@ -253,6 +251,9 @@ label[for="upload"] {
 }
 
 #list:checked ~ .container.upload,
+#compare:checked ~ .container.upload,
+#queue:checked ~ .container.upload,
+.container.options,
 .container.folder,
 .container.links {
   display:none;
@@ -307,6 +308,7 @@ label[for="upload"] {
   overflow: hidden;
 }
 
+#list:checked ~ .container.options,
 #list:checked ~ .container.folder,
 #list:checked ~ .container.links {
   display:block;
