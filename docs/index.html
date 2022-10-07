@@ -5,7 +5,645 @@
   <title>Bookmarks to PDF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="bookmarks.css">
-</head>
+<style type="text/css">
+	input[name="Architecture"]:checked ~ * label[for="Architecture"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Arts-Entertainment"]:checked ~ * label[for="Arts-Entertainment"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Books"]:checked ~ * label[for="Books"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Cars-Automobile"]:checked ~ * label[for="Cars-Automobile"] + ol {
+		display: block;
+	}
+	
+
+	input[name="CEO"]:checked ~ * label[for="CEO"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Comedy-Funny"]:checked ~ * label[for="Comedy-Funny"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Computer-Science"]:checked ~ * label[for="Computer-Science"] + ol {
+		display: block;
+	}
+	
+	input[name="AI-Machine-learning"]:checked ~ * label[for="AI-Machine-learning"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Algorithms-Data-structures"]:checked ~ * label[for="Algorithms-Data-structures"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Android-Camera"]:checked ~ * label[for="Android-Camera"] + ol {
+		display: block;
+	}
+	
+
+	input[name="API-Providers"]:checked ~ * label[for="API-Providers"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Architecture-Engineering"]:checked ~ * label[for="Architecture-Engineering"] + ol {
+		display: block;
+	}
+	
+
+	input[name="ChariTee"]:checked ~ * label[for="ChariTee"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Chrome-Extension"]:checked ~ * label[for="Chrome-Extension"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Cloud-providers"]:checked ~ * label[for="Cloud-providers"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Crimson-Agility"]:checked ~ * label[for="Crimson-Agility"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Databases"]:checked ~ * label[for="Databases"] + ol {
+		display: block;
+	}
+	
+
+	input[name="DevOps"]:checked ~ * label[for="DevOps"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Frameworks"]:checked ~ * label[for="Frameworks"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Gaming"]:checked ~ * label[for="Gaming"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Graphics-Generative-art"]:checked ~ * label[for="Graphics-Generative-art"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Information-theory-Data-analytics"]:checked ~ * label[for="Information-theory-Data-analytics"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Languages"]:checked ~ * label[for="Languages"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Linux-Mac-Command-line"]:checked ~ * label[for="Linux-Mac-Command-line"] + ol {
+		display: block;
+	}
+	
+
+	input[name="MindSpree"]:checked ~ * label[for="MindSpree"] + ol {
+		display: block;
+	}
+	
+
+	input[name="National-Sign"]:checked ~ * label[for="National-Sign"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Networking"]:checked ~ * label[for="Networking"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Quake-3"]:checked ~ * label[for="Quake-3"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Security-Privacy"]:checked ~ * label[for="Security-Privacy"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Simplicity-of-Stillness"]:checked ~ * label[for="Simplicity-of-Stillness"] + ol {
+		display: block;
+	}
+	
+
+	input[name="SOS-Method"]:checked ~ * label[for="SOS-Method"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Study-Sauce"]:checked ~ * label[for="Study-Sauce"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Swiftpage"]:checked ~ * label[for="Swiftpage"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Testing-Formal-methods"]:checked ~ * label[for="Testing-Formal-methods"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Theory-Computability"]:checked ~ * label[for="Theory-Computability"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Tools-IDEs"]:checked ~ * label[for="Tools-IDEs"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Virtual-reality"]:checked ~ * label[for="Virtual-reality"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Voice-recognition"]:checked ~ * label[for="Voice-recognition"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Web-Design-Human-interfaces"]:checked ~ * label[for="Web-Design-Human-interfaces"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Willis-Towers-Watson"]:checked ~ * label[for="Willis-Towers-Watson"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Hardware"]:checked ~ * label[for="Hardware"] + ol {
+		display: block;
+	}
+	
+
+	input[name="COO"]:checked ~ * label[for="COO"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Education"]:checked ~ * label[for="Education"] + ol {
+		display: block;
+	}
+	
+	input[name="01-Setting-goals"]:checked ~ * label[for="01-Setting-goals"] + ol {
+		display: block;
+	}
+	
+
+	input[name="02-Distractions"]:checked ~ * label[for="02-Distractions"] + ol {
+		display: block;
+	}
+	
+
+	input[name="03-Procrastination"]:checked ~ * label[for="03-Procrastination"] + ol {
+		display: block;
+	}
+	
+
+	input[name="04-Study-environment"]:checked ~ * label[for="04-Study-environment"] + ol {
+		display: block;
+	}
+	
+
+	input[name="05-Accountability-partner"]:checked ~ * label[for="05-Accountability-partner"] + ol {
+		display: block;
+	}
+	
+
+	input[name="06-Study-metrics"]:checked ~ * label[for="06-Study-metrics"] + ol {
+		display: block;
+	}
+	
+
+	input[name="07-Study-plan"]:checked ~ * label[for="07-Study-plan"] + ol {
+		display: block;
+	}
+	
+
+	input[name="08-Interleaving"]:checked ~ * label[for="08-Interleaving"] + ol {
+		display: block;
+	}
+	
+
+	input[name="09-Studying-for-tests"]:checked ~ * label[for="09-Studying-for-tests"] + ol {
+		display: block;
+	}
+	
+
+	input[name="10-Test-taking"]:checked ~ * label[for="10-Test-taking"] + ol {
+		display: block;
+	}
+	
+
+	input[name="11-Self-testing-strategies"]:checked ~ * label[for="11-Self-testing-strategies"] + ol {
+		display: block;
+	}
+	
+
+	input[name="12-Group-study"]:checked ~ * label[for="12-Group-study"] + ol {
+		display: block;
+	}
+	
+
+	input[name="13-Teach-to-learn"]:checked ~ * label[for="13-Teach-to-learn"] + ol {
+		display: block;
+	}
+	
+
+	input[name="14-Active-reading"]:checked ~ * label[for="14-Active-reading"] + ol {
+		display: block;
+	}
+	
+
+	input[name="15-Spaced-repetition"]:checked ~ * label[for="15-Spaced-repetition"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Engineering"]:checked ~ * label[for="Engineering"] + ol {
+		display: block;
+	}
+	
+	input[name="Robotics"]:checked ~ * label[for="Robotics"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Social-engineering"]:checked ~ * label[for="Social-engineering"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Construction"]:checked ~ * label[for="Construction"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Enlightenment-News"]:checked ~ * label[for="Enlightenment-News"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Fashion-Clothing"]:checked ~ * label[for="Fashion-Clothing"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Financial-Investing"]:checked ~ * label[for="Financial-Investing"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Food-Health-Nutrition"]:checked ~ * label[for="Food-Health-Nutrition"] + ol {
+		display: block;
+	}
+	
+
+	input[name="History"]:checked ~ * label[for="History"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Hobbies"]:checked ~ * label[for="Hobbies"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Job-sites"]:checked ~ * label[for="Job-sites"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Law-Legal"]:checked ~ * label[for="Law-Legal"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Marketing-SEO"]:checked ~ * label[for="Marketing-SEO"] + ol {
+		display: block;
+	}
+	
+	input[name="Site-builders"]:checked ~ * label[for="Site-builders"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Mathematics"]:checked ~ * label[for="Mathematics"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Medical-Science"]:checked ~ * label[for="Medical-Science"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Movies"]:checked ~ * label[for="Movies"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Music-Recording"]:checked ~ * label[for="Music-Recording"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Natural-Science"]:checked ~ * label[for="Natural-Science"] + ol {
+		display: block;
+	}
+	
+	input[name="Horticulture"]:checked ~ * label[for="Horticulture"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Neuroscience-Brain-Science"]:checked ~ * label[for="Neuroscience-Brain-Science"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Parenting-Family"]:checked ~ * label[for="Parenting-Family"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Philanthropy-Tithing-Charity"]:checked ~ * label[for="Philanthropy-Tithing-Charity"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Philosophy"]:checked ~ * label[for="Philosophy"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Physical-Science"]:checked ~ * label[for="Physical-Science"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Psychology"]:checked ~ * label[for="Psychology"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Quasi-dimensional"]:checked ~ * label[for="Quasi-dimensional"] + ol {
+		display: block;
+	}
+	
+	input[name="Empathy"]:checked ~ * label[for="Empathy"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Real-estate"]:checked ~ * label[for="Real-estate"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Recruiting-Staffing"]:checked ~ * label[for="Recruiting-Staffing"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Scary"]:checked ~ * label[for="Scary"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Social-Economics-Politics"]:checked ~ * label[for="Social-Economics-Politics"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Theology"]:checked ~ * label[for="Theology"] + ol {
+		display: block;
+	}
+	
+	input[name="Aztec"]:checked ~ * label[for="Aztec"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Buddhism"]:checked ~ * label[for="Buddhism"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Fairy-Tales"]:checked ~ * label[for="Fairy-Tales"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Hinduism"]:checked ~ * label[for="Hinduism"] + ol {
+		display: block;
+	}
+	
+
+	input[name="New-Testament"]:checked ~ * label[for="New-Testament"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Old-Testament"]:checked ~ * label[for="Old-Testament"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Satan"]:checked ~ * label[for="Satan"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Skull---Bones"]:checked ~ * label[for="Skull---Bones"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Witchcraft-Aliens-Illuminati"]:checked ~ * label[for="Witchcraft-Aliens-Illuminati"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Travel"]:checked ~ * label[for="Travel"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Useless-Conferences"]:checked ~ * label[for="Useless-Conferences"] + ol {
+		display: block;
+	}
+	
+
+	input[name="temp"]:checked ~ * label[for="temp"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Where-s-Waldo"]:checked ~ * label[for="Where-s-Waldo"] + ol {
+		display: block;
+	}
+	
+	input[name="Cases"]:checked ~ * label[for="Cases"] + ol {
+		display: block;
+	}
+	
+	input[name="Mental-health-nuts"]:checked ~ * label[for="Mental-health-nuts"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Nicole-Recruiter"]:checked ~ * label[for="Nicole-Recruiter"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Pyramind-Consulting"]:checked ~ * label[for="Pyramind-Consulting"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Alice-Jane--Dari-Smith--Directions-USA"]:checked ~ * label[for="Alice-Jane--Dari-Smith--Directions-USA"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Mariko--Regina-Felkner--Abby-Whitley"]:checked ~ * label[for="Mariko--Regina-Felkner--Abby-Whitley"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Vivian-Brown--MillLynnieMarie"]:checked ~ * label[for="Vivian-Brown--MillLynnieMarie"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Emily-Rudd--Vivian-Brown"]:checked ~ * label[for="Emily-Rudd--Vivian-Brown"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Vivian-Brown--Dani-Daniels"]:checked ~ * label[for="Vivian-Brown--Dani-Daniels"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Smith-Whitney--Niece-Waidhofer"]:checked ~ * label[for="Smith-Whitney--Niece-Waidhofer"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Radio-Canada--Sex-Trafficking--Marie-Eve-Tremblay"]:checked ~ * label[for="Radio-Canada--Sex-Trafficking--Marie-Eve-Tremblay"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Angelina-Smith"]:checked ~ * label[for="Angelina-Smith"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Rick-Povlik"]:checked ~ * label[for="Rick-Povlik"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Randy-Franklin"]:checked ~ * label[for="Randy-Franklin"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Stolen-Photos"]:checked ~ * label[for="Stolen-Photos"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Sarah-Myles-Macklin"]:checked ~ * label[for="Sarah-Myles-Macklin"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Cactus-Grooming"]:checked ~ * label[for="Cactus-Grooming"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Homes"]:checked ~ * label[for="Homes"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Strange-recruiting"]:checked ~ * label[for="Strange-recruiting"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Vanessa-Davis"]:checked ~ * label[for="Vanessa-Davis"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Jill-Johnston"]:checked ~ * label[for="Jill-Johnston"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Edvivi--Home-Depot--Haydn-Chilcot"]:checked ~ * label[for="Edvivi--Home-Depot--Haydn-Chilcot"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Social-Workers"]:checked ~ * label[for="Social-Workers"] + ol {
+		display: block;
+	}
+	
+
+	input[name="Projects"]:checked ~ * label[for="Projects"] + ol {
+		display: block;
+	}
+	
+	input[name="Race--Glide--Quake-2"]:checked ~ * label[for="Race--Glide--Quake-2"] + ol {
+		display: block;
+	}
+	
+	input[name="New-folder"]:checked ~ * label[for="New-folder"] + ol {
+		display: block;
+	}
+	</style></head>
 
 <body>
 
@@ -28,6 +666,256 @@
 <label for="list">List Bookmarks</label>
 <label for="compare">Compare Bookmarks</label>
 
+<input class="folder-toggle" type="checkbox" id="Architecture" name="Architecture" />
+				
+<input class="folder-toggle" type="checkbox" id="Arts-Entertainment" name="Arts-Entertainment" />
+				
+<input class="folder-toggle" type="checkbox" id="Books" name="Books" />
+				
+<input class="folder-toggle" type="checkbox" id="Cars-Automobile" name="Cars-Automobile" />
+				
+<input class="folder-toggle" type="checkbox" id="CEO" name="CEO" />
+				
+<input class="folder-toggle" type="checkbox" id="Comedy-Funny" name="Comedy-Funny" />
+				
+<input class="folder-toggle" type="checkbox" id="Computer-Science" name="Computer-Science" />
+				<input class="folder-toggle" type="checkbox" id="AI-Machine-learning" name="AI-Machine-learning" />
+				
+<input class="folder-toggle" type="checkbox" id="Algorithms-Data-structures" name="Algorithms-Data-structures" />
+				
+<input class="folder-toggle" type="checkbox" id="Android-Camera" name="Android-Camera" />
+				
+<input class="folder-toggle" type="checkbox" id="API-Providers" name="API-Providers" />
+				
+<input class="folder-toggle" type="checkbox" id="Architecture-Engineering" name="Architecture-Engineering" />
+				
+<input class="folder-toggle" type="checkbox" id="ChariTee" name="ChariTee" />
+				
+<input class="folder-toggle" type="checkbox" id="Chrome-Extension" name="Chrome-Extension" />
+				
+<input class="folder-toggle" type="checkbox" id="Cloud-providers" name="Cloud-providers" />
+				
+<input class="folder-toggle" type="checkbox" id="Crimson-Agility" name="Crimson-Agility" />
+				
+<input class="folder-toggle" type="checkbox" id="Databases" name="Databases" />
+				
+<input class="folder-toggle" type="checkbox" id="DevOps" name="DevOps" />
+				
+<input class="folder-toggle" type="checkbox" id="Frameworks" name="Frameworks" />
+				
+<input class="folder-toggle" type="checkbox" id="Gaming" name="Gaming" />
+				
+<input class="folder-toggle" type="checkbox" id="Graphics-Generative-art" name="Graphics-Generative-art" />
+				
+<input class="folder-toggle" type="checkbox" id="Information-theory-Data-analytics" name="Information-theory-Data-analytics" />
+				
+<input class="folder-toggle" type="checkbox" id="Languages" name="Languages" />
+				
+<input class="folder-toggle" type="checkbox" id="Linux-Mac-Command-line" name="Linux-Mac-Command-line" />
+				
+<input class="folder-toggle" type="checkbox" id="MindSpree" name="MindSpree" />
+				
+<input class="folder-toggle" type="checkbox" id="National-Sign" name="National-Sign" />
+				
+<input class="folder-toggle" type="checkbox" id="Networking" name="Networking" />
+				
+<input class="folder-toggle" type="checkbox" id="Quake-3" name="Quake-3" />
+				
+<input class="folder-toggle" type="checkbox" id="Security-Privacy" name="Security-Privacy" />
+				
+<input class="folder-toggle" type="checkbox" id="Simplicity-of-Stillness" name="Simplicity-of-Stillness" />
+				
+<input class="folder-toggle" type="checkbox" id="SOS-Method" name="SOS-Method" />
+				
+<input class="folder-toggle" type="checkbox" id="Study-Sauce" name="Study-Sauce" />
+				
+<input class="folder-toggle" type="checkbox" id="Swiftpage" name="Swiftpage" />
+				
+<input class="folder-toggle" type="checkbox" id="Testing-Formal-methods" name="Testing-Formal-methods" />
+				
+<input class="folder-toggle" type="checkbox" id="Theory-Computability" name="Theory-Computability" />
+				
+<input class="folder-toggle" type="checkbox" id="Tools-IDEs" name="Tools-IDEs" />
+				
+<input class="folder-toggle" type="checkbox" id="Virtual-reality" name="Virtual-reality" />
+				
+<input class="folder-toggle" type="checkbox" id="Voice-recognition" name="Voice-recognition" />
+				
+<input class="folder-toggle" type="checkbox" id="Web-Design-Human-interfaces" name="Web-Design-Human-interfaces" />
+				
+<input class="folder-toggle" type="checkbox" id="Willis-Towers-Watson" name="Willis-Towers-Watson" />
+				
+<input class="folder-toggle" type="checkbox" id="Hardware" name="Hardware" />
+				
+<input class="folder-toggle" type="checkbox" id="COO" name="COO" />
+				
+<input class="folder-toggle" type="checkbox" id="Education" name="Education" />
+				<input class="folder-toggle" type="checkbox" id="01-Setting-goals" name="01-Setting-goals" />
+				
+<input class="folder-toggle" type="checkbox" id="02-Distractions" name="02-Distractions" />
+				
+<input class="folder-toggle" type="checkbox" id="03-Procrastination" name="03-Procrastination" />
+				
+<input class="folder-toggle" type="checkbox" id="04-Study-environment" name="04-Study-environment" />
+				
+<input class="folder-toggle" type="checkbox" id="05-Accountability-partner" name="05-Accountability-partner" />
+				
+<input class="folder-toggle" type="checkbox" id="06-Study-metrics" name="06-Study-metrics" />
+				
+<input class="folder-toggle" type="checkbox" id="07-Study-plan" name="07-Study-plan" />
+				
+<input class="folder-toggle" type="checkbox" id="08-Interleaving" name="08-Interleaving" />
+				
+<input class="folder-toggle" type="checkbox" id="09-Studying-for-tests" name="09-Studying-for-tests" />
+				
+<input class="folder-toggle" type="checkbox" id="10-Test-taking" name="10-Test-taking" />
+				
+<input class="folder-toggle" type="checkbox" id="11-Self-testing-strategies" name="11-Self-testing-strategies" />
+				
+<input class="folder-toggle" type="checkbox" id="12-Group-study" name="12-Group-study" />
+				
+<input class="folder-toggle" type="checkbox" id="13-Teach-to-learn" name="13-Teach-to-learn" />
+				
+<input class="folder-toggle" type="checkbox" id="14-Active-reading" name="14-Active-reading" />
+				
+<input class="folder-toggle" type="checkbox" id="15-Spaced-repetition" name="15-Spaced-repetition" />
+				
+<input class="folder-toggle" type="checkbox" id="Engineering" name="Engineering" />
+				<input class="folder-toggle" type="checkbox" id="Robotics" name="Robotics" />
+				
+<input class="folder-toggle" type="checkbox" id="Social-engineering" name="Social-engineering" />
+				
+<input class="folder-toggle" type="checkbox" id="Construction" name="Construction" />
+				
+<input class="folder-toggle" type="checkbox" id="Enlightenment-News" name="Enlightenment-News" />
+				
+<input class="folder-toggle" type="checkbox" id="Fashion-Clothing" name="Fashion-Clothing" />
+				
+<input class="folder-toggle" type="checkbox" id="Financial-Investing" name="Financial-Investing" />
+				
+<input class="folder-toggle" type="checkbox" id="Food-Health-Nutrition" name="Food-Health-Nutrition" />
+				
+<input class="folder-toggle" type="checkbox" id="History" name="History" />
+				
+<input class="folder-toggle" type="checkbox" id="Hobbies" name="Hobbies" />
+				
+<input class="folder-toggle" type="checkbox" id="Job-sites" name="Job-sites" />
+				
+<input class="folder-toggle" type="checkbox" id="Law-Legal" name="Law-Legal" />
+				
+<input class="folder-toggle" type="checkbox" id="Marketing-SEO" name="Marketing-SEO" />
+				<input class="folder-toggle" type="checkbox" id="Site-builders" name="Site-builders" />
+				
+<input class="folder-toggle" type="checkbox" id="Mathematics" name="Mathematics" />
+				
+<input class="folder-toggle" type="checkbox" id="Medical-Science" name="Medical-Science" />
+				
+<input class="folder-toggle" type="checkbox" id="Movies" name="Movies" />
+				
+<input class="folder-toggle" type="checkbox" id="Music-Recording" name="Music-Recording" />
+				
+<input class="folder-toggle" type="checkbox" id="Natural-Science" name="Natural-Science" />
+				<input class="folder-toggle" type="checkbox" id="Horticulture" name="Horticulture" />
+				
+<input class="folder-toggle" type="checkbox" id="Neuroscience-Brain-Science" name="Neuroscience-Brain-Science" />
+				
+<input class="folder-toggle" type="checkbox" id="Parenting-Family" name="Parenting-Family" />
+				
+<input class="folder-toggle" type="checkbox" id="Philanthropy-Tithing-Charity" name="Philanthropy-Tithing-Charity" />
+				
+<input class="folder-toggle" type="checkbox" id="Philosophy" name="Philosophy" />
+				
+<input class="folder-toggle" type="checkbox" id="Physical-Science" name="Physical-Science" />
+				
+<input class="folder-toggle" type="checkbox" id="Psychology" name="Psychology" />
+				
+<input class="folder-toggle" type="checkbox" id="Quasi-dimensional" name="Quasi-dimensional" />
+				<input class="folder-toggle" type="checkbox" id="Empathy" name="Empathy" />
+				
+<input class="folder-toggle" type="checkbox" id="Real-estate" name="Real-estate" />
+				
+<input class="folder-toggle" type="checkbox" id="Recruiting-Staffing" name="Recruiting-Staffing" />
+				
+<input class="folder-toggle" type="checkbox" id="Scary" name="Scary" />
+				
+<input class="folder-toggle" type="checkbox" id="Social-Economics-Politics" name="Social-Economics-Politics" />
+				
+<input class="folder-toggle" type="checkbox" id="Theology" name="Theology" />
+				<input class="folder-toggle" type="checkbox" id="Aztec" name="Aztec" />
+				
+<input class="folder-toggle" type="checkbox" id="Buddhism" name="Buddhism" />
+				
+<input class="folder-toggle" type="checkbox" id="Fairy-Tales" name="Fairy-Tales" />
+				
+<input class="folder-toggle" type="checkbox" id="Hinduism" name="Hinduism" />
+				
+<input class="folder-toggle" type="checkbox" id="New-Testament" name="New-Testament" />
+				
+<input class="folder-toggle" type="checkbox" id="Old-Testament" name="Old-Testament" />
+				
+<input class="folder-toggle" type="checkbox" id="Satan" name="Satan" />
+				
+<input class="folder-toggle" type="checkbox" id="Skull---Bones" name="Skull---Bones" />
+				
+<input class="folder-toggle" type="checkbox" id="Witchcraft-Aliens-Illuminati" name="Witchcraft-Aliens-Illuminati" />
+				
+<input class="folder-toggle" type="checkbox" id="Travel" name="Travel" />
+				
+<input class="folder-toggle" type="checkbox" id="Useless-Conferences" name="Useless-Conferences" />
+				
+<input class="folder-toggle" type="checkbox" id="temp" name="temp" />
+				
+<input class="folder-toggle" type="checkbox" id="Where-s-Waldo" name="Where-s-Waldo" />
+				<input class="folder-toggle" type="checkbox" id="Cases" name="Cases" />
+				<input class="folder-toggle" type="checkbox" id="Mental-health-nuts" name="Mental-health-nuts" />
+				
+<input class="folder-toggle" type="checkbox" id="Nicole-Recruiter" name="Nicole-Recruiter" />
+				
+<input class="folder-toggle" type="checkbox" id="Pyramind-Consulting" name="Pyramind-Consulting" />
+				
+<input class="folder-toggle" type="checkbox" id="Alice-Jane--Dari-Smith--Directions-USA" name="Alice-Jane--Dari-Smith--Directions-USA" />
+				
+<input class="folder-toggle" type="checkbox" id="Mariko--Regina-Felkner--Abby-Whitley" name="Mariko--Regina-Felkner--Abby-Whitley" />
+				
+<input class="folder-toggle" type="checkbox" id="Vivian-Brown--MillLynnieMarie" name="Vivian-Brown--MillLynnieMarie" />
+				
+<input class="folder-toggle" type="checkbox" id="Emily-Rudd--Vivian-Brown" name="Emily-Rudd--Vivian-Brown" />
+				
+<input class="folder-toggle" type="checkbox" id="Vivian-Brown--Dani-Daniels" name="Vivian-Brown--Dani-Daniels" />
+				
+<input class="folder-toggle" type="checkbox" id="Smith-Whitney--Niece-Waidhofer" name="Smith-Whitney--Niece-Waidhofer" />
+				
+<input class="folder-toggle" type="checkbox" id="Radio-Canada--Sex-Trafficking--Marie-Eve-Tremblay" name="Radio-Canada--Sex-Trafficking--Marie-Eve-Tremblay" />
+				
+<input class="folder-toggle" type="checkbox" id="Angelina-Smith" name="Angelina-Smith" />
+				
+<input class="folder-toggle" type="checkbox" id="Rick-Povlik" name="Rick-Povlik" />
+				
+<input class="folder-toggle" type="checkbox" id="Randy-Franklin" name="Randy-Franklin" />
+				
+<input class="folder-toggle" type="checkbox" id="Stolen-Photos" name="Stolen-Photos" />
+				
+<input class="folder-toggle" type="checkbox" id="Sarah-Myles-Macklin" name="Sarah-Myles-Macklin" />
+				
+<input class="folder-toggle" type="checkbox" id="Cactus-Grooming" name="Cactus-Grooming" />
+				
+<input class="folder-toggle" type="checkbox" id="Homes" name="Homes" />
+				
+<input class="folder-toggle" type="checkbox" id="Strange-recruiting" name="Strange-recruiting" />
+				
+<input class="folder-toggle" type="checkbox" id="Vanessa-Davis" name="Vanessa-Davis" />
+				
+<input class="folder-toggle" type="checkbox" id="Jill-Johnston" name="Jill-Johnston" />
+				
+<input class="folder-toggle" type="checkbox" id="Edvivi--Home-Depot--Haydn-Chilcot" name="Edvivi--Home-Depot--Haydn-Chilcot" />
+				
+<input class="folder-toggle" type="checkbox" id="Social-Workers" name="Social-Workers" />
+				
+<input class="folder-toggle" type="checkbox" id="Projects" name="Projects" />
+				<input class="folder-toggle" type="checkbox" id="Race--Glide--Quake-2" name="Race--Glide--Quake-2" />
+				<input class="folder-toggle" type="checkbox" id="New-folder" name="New-folder" />
+				
+
 <div class="container upload">
   <div id="bookmark-list">
     <textarea id="bookmark_text"></textarea>
@@ -44,646 +932,516 @@
 </div>
 
 <div class="container folder">
-  <ol class="bookmarks"><li>
-  <label for="Architecture">
-    Architecture</label>
-    
-</li>
-<li>
-  <label for="Arts/Entertainment">
-    Arts/Entertainment</label>
-    
-</li>
-<li>
-  <label for="Books">
-    Books</label>
-    
-</li>
-<li>
-  <label for="Cars/Automobile">
-    Cars/Automobile</label>
-    
-</li>
-<li>
-  <label for="CEO">
-    CEO</label>
-    
-</li>
-<li>
-  <label for="Comedy/Funny">
-    Comedy/Funny</label>
-    
-</li>
-<li>
-  <label for="Computer Science">
-    Computer Science</label>
-    <ol><li>
-  <label for="AI/Machine learning">
-    AI/Machine learning</label>
-    
-</li>
-<li>
-  <label for="Algorithms/Data structures">
-    Algorithms/Data structures</label>
-    
-</li>
-<li>
-  <label for="Android Camera">
-    Android Camera</label>
-    
-</li>
-<li>
-  <label for="API Providers">
-    API Providers</label>
-    
-</li>
-<li>
-  <label for="Architecture/Engineering">
-    Architecture/Engineering</label>
-    
-</li>
-<li>
-  <label for="ChariTee">
-    ChariTee</label>
-    
-</li>
-<li>
-  <label for="Chrome Extension">
-    Chrome Extension</label>
-    
-</li>
-<li>
-  <label for="Cloud providers">
-    Cloud providers</label>
-    
-</li>
-<li>
-  <label for="Crimson Agility">
-    Crimson Agility</label>
-    
-</li>
-<li>
-  <label for="Databases">
-    Databases</label>
-    
-</li>
-<li>
-  <label for="DevOps">
-    DevOps</label>
-    
-</li>
-<li>
-  <label for="Frameworks">
-    Frameworks</label>
-    
-</li>
-<li>
-  <label for="Gaming">
-    Gaming</label>
-    
-</li>
-<li>
-  <label for="Graphics/Generative art">
-    Graphics/Generative art</label>
-    
-</li>
-<li>
-  <label for="Information theory/Data analytics">
-    Information theory/Data analytics</label>
-    
-</li>
-<li>
-  <label for="Languages">
-    Languages</label>
-    
-</li>
-<li>
-  <label for="Linux/Mac/Command line">
-    Linux/Mac/Command line</label>
-    
-</li>
-<li>
-  <label for="MindSpree">
-    MindSpree</label>
-    
-</li>
-<li>
-  <label for="National Sign">
-    National Sign</label>
-    
-</li>
-<li>
-  <label for="Networking">
-    Networking</label>
-    
-</li>
-<li>
-  <label for="Quake 3">
-    Quake 3</label>
-    
-</li>
-<li>
-  <label for="Security/Privacy">
-    Security/Privacy</label>
-    
-</li>
-<li>
-  <label for="Simplicity of Stillness">
-    Simplicity of Stillness</label>
-    
-</li>
-<li>
-  <label for="SOS Method">
-    SOS Method</label>
-    
-</li>
-<li>
-  <label for="Study Sauce">
-    Study Sauce</label>
-    
-</li>
-<li>
-  <label for="Swiftpage">
-    Swiftpage</label>
-    
-</li>
-<li>
-  <label for="Testing/Formal methods">
-    Testing/Formal methods</label>
-    
-</li>
-<li>
-  <label for="Theory/Computability">
-    Theory/Computability</label>
-    
-</li>
-<li>
-  <label for="Tools/IDEs">
-    Tools/IDEs</label>
-    
-</li>
-<li>
-  <label for="Virtual reality">
-    Virtual reality</label>
-    
-</li>
-<li>
-  <label for="Voice recognition">
-    Voice recognition</label>
-    
-</li>
-<li>
-  <label for="Web/Design/Human interfaces">
-    Web/Design/Human interfaces</label>
-    
-</li>
-<li>
-  <label for="Willis Towers Watson">
-    Willis Towers Watson</label>
-    
-</li>
-<li>
-  <label for="Hardware">
-    Hardware</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="COO">
-    COO</label>
-    
-</li>
-<li>
-  <label for="Education">
-    Education</label>
-    <ol><li>
-  <label for="01 Setting goals">
-    01 Setting goals</label>
-    
-</li>
-<li>
-  <label for="02 Distractions">
-    02 Distractions</label>
-    
-</li>
-<li>
-  <label for="03 Procrastination">
-    03 Procrastination</label>
-    
-</li>
-<li>
-  <label for="04 Study environment">
-    04 Study environment</label>
-    
-</li>
-<li>
-  <label for="05 Accountability partner">
-    05 Accountability partner</label>
-    
-</li>
-<li>
-  <label for="06 Study metrics">
-    06 Study metrics</label>
-    
-</li>
-<li>
-  <label for="07 Study plan">
-    07 Study plan</label>
-    
-</li>
-<li>
-  <label for="08 Interleaving">
-    08 Interleaving</label>
-    
-</li>
-<li>
-  <label for="09 Studying for tests">
-    09 Studying for tests</label>
-    
-</li>
-<li>
-  <label for="10 Test taking">
-    10 Test taking</label>
-    
-</li>
-<li>
-  <label for="11 Self-testing strategies">
-    11 Self-testing strategies</label>
-    
-</li>
-<li>
-  <label for="12 Group study">
-    12 Group study</label>
-    
-</li>
-<li>
-  <label for="13 Teach to learn">
-    13 Teach to learn</label>
-    
-</li>
-<li>
-  <label for="14 Active reading">
-    14 Active reading</label>
-    
-</li>
-<li>
-  <label for="15 Spaced repetition">
-    15 Spaced repetition</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Engineering">
-    Engineering</label>
-    <ol><li>
-  <label for="Robotics">
-    Robotics</label>
-    
-</li>
-<li>
-  <label for="Social engineering">
-    Social engineering</label>
-    
-</li>
-<li>
-  <label for="Construction">
-    Construction</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Enlightenment/News">
-    Enlightenment/News</label>
-    
-</li>
-<li>
-  <label for="Fashion/Clothing">
-    Fashion/Clothing</label>
-    
-</li>
-<li>
-  <label for="Financial/Investing">
-    Financial/Investing</label>
-    
-</li>
-<li>
-  <label for="Food/Health/Nutrition">
-    Food/Health/Nutrition</label>
-    
-</li>
-<li>
-  <label for="History">
-    History</label>
-    
-</li>
-<li>
-  <label for="Hobbies">
-    Hobbies</label>
-    
-</li>
-<li>
-  <label for="Job sites">
-    Job sites</label>
-    
-</li>
-<li>
-  <label for="Law/Legal">
-    Law/Legal</label>
-    
-</li>
-<li>
-  <label for="Marketing/SEO">
-    Marketing/SEO</label>
-    <ol><li>
-  <label for="Site builders">
-    Site builders</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Mathematics">
-    Mathematics</label>
-    
-</li>
-<li>
-  <label for="Medical Science">
-    Medical Science</label>
-    
-</li>
-<li>
-  <label for="Movies">
-    Movies</label>
-    
-</li>
-<li>
-  <label for="Music/Recording">
-    Music/Recording</label>
-    
-</li>
-<li>
-  <label for="Natural Science">
-    Natural Science</label>
-    <ol><li>
-  <label for="Horticulture">
-    Horticulture</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Neuroscience/Brain Science">
-    Neuroscience/Brain Science</label>
-    
-</li>
-<li>
-  <label for="Parenting/Family">
-    Parenting/Family</label>
-    
-</li>
-<li>
-  <label for="Philanthropy/Tithing/Charity">
-    Philanthropy/Tithing/Charity</label>
-    
-</li>
-<li>
-  <label for="Philosophy">
-    Philosophy</label>
-    
-</li>
-<li>
-  <label for="Physical Science">
-    Physical Science</label>
-    
-</li>
-<li>
-  <label for="Psychology">
-    Psychology</label>
-    
-</li>
-<li>
-  <label for="Quasi-dimensional">
-    Quasi-dimensional</label>
-    <ol><li>
-  <label for="Empathy">
-    Empathy</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Real-estate">
-    Real-estate</label>
-    
-</li>
-<li>
-  <label for="Recruiting/Staffing">
-    Recruiting/Staffing</label>
-    
-</li>
-<li>
-  <label for="Scary">
-    Scary</label>
-    
-</li>
-<li>
-  <label for="Social/Economics/Politics">
-    Social/Economics/Politics</label>
-    
-</li>
-<li>
-  <label for="Theology">
-    Theology</label>
-    <ol><li>
-  <label for="Aztec">
-    Aztec</label>
-    
-</li>
-<li>
-  <label for="Buddhism">
-    Buddhism</label>
-    
-</li>
-<li>
-  <label for="Fairy Tales">
-    Fairy Tales</label>
-    
-</li>
-<li>
-  <label for="Hinduism">
-    Hinduism</label>
-    
-</li>
-<li>
-  <label for="New Testament">
-    New Testament</label>
-    
-</li>
-<li>
-  <label for="Old Testament">
-    Old Testament</label>
-    
-</li>
-<li>
-  <label for="Satan">
-    Satan</label>
-    
-</li>
-<li>
-  <label for="Skull & Bones">
-    Skull & Bones</label>
-    
-</li>
-<li>
-  <label for="Witchcraft/Aliens/Illuminati">
-    Witchcraft/Aliens/Illuminati</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Travel">
-    Travel</label>
-    
-</li>
-<li>
-  <label for="Useless Conferences">
-    Useless Conferences</label>
-    
-</li>
-<li>
-  <label for="temp">
-    temp</label>
-    
-</li>
-<li>
-  <label for="Where's Waldo">
-    Where's Waldo</label>
-    <ol><li>
-  <label for="Cases">
-    Cases</label>
-    <ol><li>
-  <label for="Mental health nuts">
-    Mental health nuts</label>
-    
-</li>
-<li>
-  <label for="Nicole Recruiter">
-    Nicole Recruiter</label>
-    
-</li>
-<li>
-  <label for="Pyramind Consulting">
-    Pyramind Consulting</label>
-    
-</li>
-<li>
-  <label for="Alice Jane, Dari Smith, Directions USA">
-    Alice Jane, Dari Smith, Directions USA</label>
-    
-</li>
-<li>
-  <label for="Mariko, Regina Felkner, Abby Whitley">
-    Mariko, Regina Felkner, Abby Whitley</label>
-    
-</li>
-<li>
-  <label for="Vivian Brown, MillLynnieMarie">
-    Vivian Brown, MillLynnieMarie</label>
-    
-</li>
-<li>
-  <label for="Emily Rudd, Vivian Brown">
-    Emily Rudd, Vivian Brown</label>
-    
-</li>
-<li>
-  <label for="Vivian Brown, Dani Daniels">
-    Vivian Brown, Dani Daniels</label>
-    
-</li>
-<li>
-  <label for="Smith Whitney, Niece Waidhofer">
-    Smith Whitney, Niece Waidhofer</label>
-    
-</li>
-<li>
-  <label for="Radio Canada, Sex Trafficking, Marie-Eve Tremblay">
-    Radio Canada, Sex Trafficking, Marie-Eve Tremblay</label>
-    
-</li>
-<li>
-  <label for="Angelina Smith">
-    Angelina Smith</label>
-    
-</li>
-<li>
-  <label for="Rick Povlik">
-    Rick Povlik</label>
-    
-</li>
-<li>
-  <label for="Randy Franklin">
-    Randy Franklin</label>
-    
-</li>
-<li>
-  <label for="Stolen Photos">
-    Stolen Photos</label>
-    
-</li>
-<li>
-  <label for="Sarah Myles Macklin">
-    Sarah Myles Macklin</label>
-    
-</li>
-<li>
-  <label for="Cactus Grooming">
-    Cactus Grooming</label>
-    
-</li>
-<li>
-  <label for="Homes">
-    Homes</label>
-    
-</li>
-<li>
-  <label for="Strange recruiting">
-    Strange recruiting</label>
-    
-</li>
-<li>
-  <label for="Vanessa Davis">
-    Vanessa Davis</label>
-    
-</li>
-<li>
-  <label for="Jill Johnston">
-    Jill Johnston</label>
-    
-</li>
-<li>
-  <label for="Edvivi, Home Depot, Haydn Chilcot">
-    Edvivi, Home Depot, Haydn Chilcot</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Social Workers">
-    Social Workers</label>
-    
-</li></ol>
-</li>
-<li>
-  <label for="Projects">
-    Projects</label>
-    <ol><li>
-  <label for="Race, Glide, Quake 2">
-    Race, Glide, Quake 2</label>
-    <ol><li>
-  <label for="New folder">
-    New folder</label>
-    
-</li></ol>
-</li></ol>
-</li>
+  <ol class="bookmarks">
+		<li><label for="Architecture">Architecture</label>
+    
+		</li>
+
+		<li><label for="Arts-Entertainment">Arts/Entertainment</label>
+    
+		</li>
+
+		<li><label for="Books">Books</label>
+    
+		</li>
+
+		<li><label for="Cars-Automobile">Cars/Automobile</label>
+    
+		</li>
+
+		<li><label for="CEO">CEO</label>
+    
+		</li>
+
+		<li><label for="Comedy-Funny">Comedy/Funny</label>
+    
+		</li>
+
+		<li><label for="Computer-Science">Computer Science</label>
+    <ol class="Computer-Science">
+		<li><label for="AI-Machine-learning">AI/Machine learning</label>
+    
+		</li>
+
+		<li><label for="Algorithms-Data-structures">Algorithms/Data structures</label>
+    
+		</li>
+
+		<li><label for="Android-Camera">Android Camera</label>
+    
+		</li>
+
+		<li><label for="API-Providers">API Providers</label>
+    
+		</li>
+
+		<li><label for="Architecture-Engineering">Architecture/Engineering</label>
+    
+		</li>
+
+		<li><label for="ChariTee">ChariTee</label>
+    
+		</li>
+
+		<li><label for="Chrome-Extension">Chrome Extension</label>
+    
+		</li>
+
+		<li><label for="Cloud-providers">Cloud providers</label>
+    
+		</li>
+
+		<li><label for="Crimson-Agility">Crimson Agility</label>
+    
+		</li>
+
+		<li><label for="Databases">Databases</label>
+    
+		</li>
+
+		<li><label for="DevOps">DevOps</label>
+    
+		</li>
+
+		<li><label for="Frameworks">Frameworks</label>
+    
+		</li>
+
+		<li><label for="Gaming">Gaming</label>
+    
+		</li>
+
+		<li><label for="Graphics-Generative-art">Graphics/Generative art</label>
+    
+		</li>
+
+		<li><label for="Information-theory-Data-analytics">Information theory/Data analytics</label>
+    
+		</li>
+
+		<li><label for="Languages">Languages</label>
+    
+		</li>
+
+		<li><label for="Linux-Mac-Command-line">Linux/Mac/Command line</label>
+    
+		</li>
+
+		<li><label for="MindSpree">MindSpree</label>
+    
+		</li>
+
+		<li><label for="National-Sign">National Sign</label>
+    
+		</li>
+
+		<li><label for="Networking">Networking</label>
     
+		</li>
+
+		<li><label for="Quake-3">Quake 3</label>
+    
+		</li>
+
+		<li><label for="Security-Privacy">Security/Privacy</label>
+    
+		</li>
+
+		<li><label for="Simplicity-of-Stillness">Simplicity of Stillness</label>
+    
+		</li>
+
+		<li><label for="SOS-Method">SOS Method</label>
+    
+		</li>
+
+		<li><label for="Study-Sauce">Study Sauce</label>
+    
+		</li>
+
+		<li><label for="Swiftpage">Swiftpage</label>
+    
+		</li>
+
+		<li><label for="Testing-Formal-methods">Testing/Formal methods</label>
+    
+		</li>
+
+		<li><label for="Theory-Computability">Theory/Computability</label>
+    
+		</li>
+
+		<li><label for="Tools-IDEs">Tools/IDEs</label>
+    
+		</li>
+
+		<li><label for="Virtual-reality">Virtual reality</label>
+    
+		</li>
+
+		<li><label for="Voice-recognition">Voice recognition</label>
+    
+		</li>
+
+		<li><label for="Web-Design-Human-interfaces">Web/Design/Human interfaces</label>
+    
+		</li>
+
+		<li><label for="Willis-Towers-Watson">Willis Towers Watson</label>
+    
+		</li>
+
+		<li><label for="Hardware">Hardware</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="COO">COO</label>
+    
+		</li>
+
+		<li><label for="Education">Education</label>
+    <ol class="Education">
+		<li><label for="01-Setting-goals">01 Setting goals</label>
+    
+		</li>
+
+		<li><label for="02-Distractions">02 Distractions</label>
+    
+		</li>
+
+		<li><label for="03-Procrastination">03 Procrastination</label>
+    
+		</li>
+
+		<li><label for="04-Study-environment">04 Study environment</label>
+    
+		</li>
+
+		<li><label for="05-Accountability-partner">05 Accountability partner</label>
+    
+		</li>
+
+		<li><label for="06-Study-metrics">06 Study metrics</label>
+    
+		</li>
+
+		<li><label for="07-Study-plan">07 Study plan</label>
+    
+		</li>
+
+		<li><label for="08-Interleaving">08 Interleaving</label>
+    
+		</li>
+
+		<li><label for="09-Studying-for-tests">09 Studying for tests</label>
+    
+		</li>
+
+		<li><label for="10-Test-taking">10 Test taking</label>
+    
+		</li>
+
+		<li><label for="11-Self-testing-strategies">11 Self-testing strategies</label>
+    
+		</li>
+
+		<li><label for="12-Group-study">12 Group study</label>
+    
+		</li>
+
+		<li><label for="13-Teach-to-learn">13 Teach to learn</label>
+    
+		</li>
+
+		<li><label for="14-Active-reading">14 Active reading</label>
+    
+		</li>
+
+		<li><label for="15-Spaced-repetition">15 Spaced repetition</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Engineering">Engineering</label>
+    <ol class="Engineering">
+		<li><label for="Robotics">Robotics</label>
+    
+		</li>
+
+		<li><label for="Social-engineering">Social engineering</label>
+    
+		</li>
+
+		<li><label for="Construction">Construction</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Enlightenment-News">Enlightenment/News</label>
+    
+		</li>
+
+		<li><label for="Fashion-Clothing">Fashion/Clothing</label>
+    
+		</li>
+
+		<li><label for="Financial-Investing">Financial/Investing</label>
+    
+		</li>
+
+		<li><label for="Food-Health-Nutrition">Food/Health/Nutrition</label>
+    
+		</li>
+
+		<li><label for="History">History</label>
+    
+		</li>
+
+		<li><label for="Hobbies">Hobbies</label>
+    
+		</li>
+
+		<li><label for="Job-sites">Job sites</label>
+    
+		</li>
+
+		<li><label for="Law-Legal">Law/Legal</label>
+    
+		</li>
+
+		<li><label for="Marketing-SEO">Marketing/SEO</label>
+    <ol class="Marketing-SEO">
+		<li><label for="Site-builders">Site builders</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Mathematics">Mathematics</label>
+    
+		</li>
+
+		<li><label for="Medical-Science">Medical Science</label>
+    
+		</li>
+
+		<li><label for="Movies">Movies</label>
+    
+		</li>
+
+		<li><label for="Music-Recording">Music/Recording</label>
+    
+		</li>
+
+		<li><label for="Natural-Science">Natural Science</label>
+    <ol class="Natural-Science">
+		<li><label for="Horticulture">Horticulture</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Neuroscience-Brain-Science">Neuroscience/Brain Science</label>
+    
+		</li>
+
+		<li><label for="Parenting-Family">Parenting/Family</label>
+    
+		</li>
+
+		<li><label for="Philanthropy-Tithing-Charity">Philanthropy/Tithing/Charity</label>
+    
+		</li>
+
+		<li><label for="Philosophy">Philosophy</label>
+    
+		</li>
+
+		<li><label for="Physical-Science">Physical Science</label>
+    
+		</li>
+
+		<li><label for="Psychology">Psychology</label>
+    
+		</li>
+
+		<li><label for="Quasi-dimensional">Quasi-dimensional</label>
+    <ol class="Quasi-dimensional">
+		<li><label for="Empathy">Empathy</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Real-estate">Real-estate</label>
+    
+		</li>
+
+		<li><label for="Recruiting-Staffing">Recruiting/Staffing</label>
+    
+		</li>
+
+		<li><label for="Scary">Scary</label>
+    
+		</li>
+
+		<li><label for="Social-Economics-Politics">Social/Economics/Politics</label>
+    
+		</li>
+
+		<li><label for="Theology">Theology</label>
+    <ol class="Theology">
+		<li><label for="Aztec">Aztec</label>
+    
+		</li>
+
+		<li><label for="Buddhism">Buddhism</label>
+    
+		</li>
+
+		<li><label for="Fairy-Tales">Fairy Tales</label>
+    
+		</li>
+
+		<li><label for="Hinduism">Hinduism</label>
+    
+		</li>
+
+		<li><label for="New-Testament">New Testament</label>
+    
+		</li>
+
+		<li><label for="Old-Testament">Old Testament</label>
+    
+		</li>
+
+		<li><label for="Satan">Satan</label>
+    
+		</li>
+
+		<li><label for="Skull---Bones">Skull & Bones</label>
+    
+		</li>
+
+		<li><label for="Witchcraft-Aliens-Illuminati">Witchcraft/Aliens/Illuminati</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Travel">Travel</label>
+    
+		</li>
+
+		<li><label for="Useless-Conferences">Useless Conferences</label>
+    
+		</li>
+
+		<li><label for="temp">temp</label>
+    
+		</li>
+
+		<li><label for="Where-s-Waldo">Where's Waldo</label>
+    <ol class="Where-s-Waldo">
+		<li><label for="Cases">Cases</label>
+    <ol class="Cases">
+		<li><label for="Mental-health-nuts">Mental health nuts</label>
+    
+		</li>
+
+		<li><label for="Nicole-Recruiter">Nicole Recruiter</label>
+    
+		</li>
+
+		<li><label for="Pyramind-Consulting">Pyramind Consulting</label>
+    
+		</li>
+
+		<li><label for="Alice-Jane--Dari-Smith--Directions-USA">Alice Jane, Dari Smith, Directions USA</label>
+    
+		</li>
+
+		<li><label for="Mariko--Regina-Felkner--Abby-Whitley">Mariko, Regina Felkner, Abby Whitley</label>
+    
+		</li>
+
+		<li><label for="Vivian-Brown--MillLynnieMarie">Vivian Brown, MillLynnieMarie</label>
+    
+		</li>
+
+		<li><label for="Emily-Rudd--Vivian-Brown">Emily Rudd, Vivian Brown</label>
+    
+		</li>
+
+		<li><label for="Vivian-Brown--Dani-Daniels">Vivian Brown, Dani Daniels</label>
+    
+		</li>
+
+		<li><label for="Smith-Whitney--Niece-Waidhofer">Smith Whitney, Niece Waidhofer</label>
+    
+		</li>
+
+		<li><label for="Radio-Canada--Sex-Trafficking--Marie-Eve-Tremblay">Radio Canada, Sex Trafficking, Marie-Eve Tremblay</label>
+    
+		</li>
+
+		<li><label for="Angelina-Smith">Angelina Smith</label>
+    
+		</li>
+
+		<li><label for="Rick-Povlik">Rick Povlik</label>
+    
+		</li>
+
+		<li><label for="Randy-Franklin">Randy Franklin</label>
+    
+		</li>
+
+		<li><label for="Stolen-Photos">Stolen Photos</label>
+    
+		</li>
+
+		<li><label for="Sarah-Myles-Macklin">Sarah Myles Macklin</label>
+    
+		</li>
+
+		<li><label for="Cactus-Grooming">Cactus Grooming</label>
+    
+		</li>
+
+		<li><label for="Homes">Homes</label>
+    
+		</li>
+
+		<li><label for="Strange-recruiting">Strange recruiting</label>
+    
+		</li>
+
+		<li><label for="Vanessa-Davis">Vanessa Davis</label>
+    
+		</li>
+
+		<li><label for="Jill-Johnston">Jill Johnston</label>
+    
+		</li>
+
+		<li><label for="Edvivi--Home-Depot--Haydn-Chilcot">Edvivi, Home Depot, Haydn Chilcot</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Social-Workers">Social Workers</label>
+    
+		</li></ol>
+		</li>
+
+		<li><label for="Projects">Projects</label>
+    <ol class="Projects">
+		<li><label for="Race--Glide--Quake-2">Race, Glide, Quake 2</label>
+    <ol class="Race--Glide--Quake-2">
+		<li><label for="New-folder">New folder</label>
+    
+		</li></ol>
+		</li></ol>
+		</li>
+
   </ol>
 </div>
 

@@ -2,7 +2,6 @@
 const CHUNK_SIZE = 1024 * 10
 
 const SAVE_URL = '/fileput'
-const NON_ALPHA_NUM = (/[^a-z0-9-_]/gi)
 
 const files = []
 

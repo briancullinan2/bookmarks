@@ -1,24 +1,52 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
-const { SAVE_URL, NON_ALPHA_NUM } = require('./docs/bookmarks.js')
+const { SAVE_URL } = require('./docs/bookmarks.js')
 const INDEX = fs.readFileSync('./index.html').toString('utf-8')
 const OUTPUT = path.resolve(path.join(__dirname, '.output'))
 const { selectDom } = require('./select-tree.js')
 const { BOOKMARKS_TREE } = require('./get-bookmarks.js')
 
+const NON_ALPHA_NUM = (/[^abcdefghijklmnopqrstuvwxyz0123456789]/gi)
+
 
 // todo: make dynamic
 
-function listBookmarkFolders(bookmarks) {
+function listBookmarkStyles(bookmarks) {
 	return (bookmarks || []).map(folder => {
-		return `<li>
-  <label for="${folder.folder.replace(NON_ALPHA_NUM, '-')}">
-    ${folder.folder}</label>
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		return `
+	input[name="${safeName}"]:checked ~ * label[for="${safeName}"] + ol {
+		display: block;
+	}
+	${folder.children && folder.children.length > 0
+		? (listBookmarkStyles(folder.children))
+		: ''}`
+	}).join('\n')
+}
+
+
+function listBookmarkToggle(bookmarks) {
+	return (bookmarks || []).map(folder => {
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		return `<input class="folder-toggle" type="checkbox" id="${safeName}" name="${safeName}" />
+				${folder.children && folder.children.length > 0
+					? (listBookmarkToggle(folder.children))
+					: ''}`
+	}).join('\n')
+}
+
+
+function listBookmarkFolders(bookmarks, level) {
+	return (bookmarks || []).map(folder => {
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		return `
+		<li><label for="${safeName}">${folder.folder}</label>
     ${folder.children && folder.children.length > 0
-				? ('<ol>' + listBookmarkFolders(folder.children) + '</ol>')
+				? (`<ol class="${safeName}">${
+						listBookmarkFolders(folder.children, (level || '') + ' ' + safeName)}</ol>`)
 				: ''}
-</li>`
+		</li>`
 	}).join('\n')
 }
 
@@ -48,14 +76,27 @@ function getBookmarks(bookmarksFile) {
 
 
 function renderIndex() {
+	let bookmarks = getBookmarks()
 	let index = INDEX
 
 	let bodyTag = index.match(/<ol class="bookmarks"[\n\r.^>]*?>/i)
 	let offset = bodyTag.index
-	let bookmarks = getBookmarks()
 	index = index.substring(0, offset + bodyTag[0].length)
 		+ listBookmarkFolders(bookmarks) 
 		+ index.substring(offset + bodyTag[0].length, index.length)
+
+	bodyTag = index.match(/<\/head>/i)
+	offset = bodyTag.index
+	index = index.substring(0, offset)
+		+ '<style type="text/css">' + listBookmarkStyles(bookmarks) + '</style></head>'
+		+ index.substring(offset + bodyTag[0].length, index.length)
+
+	bodyTag = index.match(/<input name="folder-toggle" \/>/i)
+	offset = bodyTag.index
+	index = index.substring(0, offset)
+		+ listBookmarkToggle(bookmarks)
+		+ index.substring(offset + bodyTag[0].length, index.length)
+
 
 	fs.writeFileSync(path.join(__dirname, 'docs/index.html'), index)
 }

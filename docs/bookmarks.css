@@ -184,7 +184,8 @@ label[for="upload"] {
 
 #compare,
 #list,
-#upload {
+#upload,
+.folder-toggle {
   opacity: 0;
   height: 1px;
   width: 1px;
@@ -210,10 +211,21 @@ label[for="upload"] {
   padding: 0;
 }
 
-.bookmarks ol li {
-  padding: 0 0 0 20px;
+.bookmarks ol li label {
+  padding-left: 20px;
 }
 
+.bookmarks ol li ol li label {
+  padding-left: 40px;
+}
+
+.bookmarks ol li ol li ol li label {
+  padding-left: 60px;
+}
+
+.bookmarks ol  {
+  display:none;
+}
 
 
 .bookmarks a,
@@ -230,18 +242,28 @@ label[for="upload"] {
   white-space: nowrap;
 }
 
+
+.bookmarks a:hover,
+.bookmarks label:hover,
+.bookmarks a:focus,
+.bookmarks label:focus,
+.bookmarks a:active,
+.bookmarks label:active {
+  background: #226;
+}
+
 #list:checked ~ .container.upload,
 .container.folder {
   display:none;
 }
 
 .container.folder {
-  max-width: 300px;
+  max-width: 250px;
   margin-left:0;
   text-align: left;
   overflow-y: scroll;
   position: absolute;
-  top: 200px;
+  top: 150px;
   bottom:0;
   height: auto;
 }
