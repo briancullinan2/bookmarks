@@ -23,6 +23,7 @@
     "moment": "^2.29.4",
     "node-addon-api": "^5.0.0",
     "node-gyp": "^9.1.0",
+    "puppeteer": "^18.2.1",
     "wgxpath": "^1.2.0"
   }
 }

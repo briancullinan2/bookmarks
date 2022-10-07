@@ -1,6 +1,7 @@
 
 const CHUNK_SIZE = 1024 * 10
 
+const NON_ALPHA_NUM = (/[^abcdefghijklmnopqrstuvwxyz0123456789]/gi)
 const SAVE_URL = '/fileput'
 
 const files = []
@@ -37,7 +38,7 @@ async function uploadFiles(ev) {
       data: Array.from(segmentData)
     }
     if(i == 0) {
-      putData.name = currentFile.name.replace(NON_ALPHA_NUM, '-')
+      putData.name = currentFile.name.replace(NON_ALPHA_NUM, '_')
     } else {
       putData.key = fileKey
     }

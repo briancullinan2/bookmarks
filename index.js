@@ -1,12 +1,15 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+const puppeteer = require('puppeteer')
 const { SAVE_URL } = require('./docs/bookmarks.js')
 const INDEX = fs.readFileSync('./index.html').toString('utf-8')
 const OUTPUT = path.resolve(path.join(__dirname, '.output'))
 const { selectDom } = require('./select-tree.js')
 const { BOOKMARKS_TREE } = require('./get-bookmarks.js')
 
+const PDF_URL = '/pdf'
+const SCREENSHOT_URL = '/screenshot'
 const NON_ALPHA_NUM = (/[^abcdefghijklmnopqrstuvwxyz0123456789]/gi)
 
 
@@ -14,7 +17,7 @@ const NON_ALPHA_NUM = (/[^abcdefghijklmnopqrstuvwxyz0123456789]/gi)
 
 function listBookmarkStyles(bookmarks) {
 	return (bookmarks || []).map(folder => {
-		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '_')
 		return `
 	input[name="${safeName}"]:checked ~ * label[for="${safeName}"] + ol {
 		display: block;
@@ -23,6 +26,12 @@ function listBookmarkStyles(bookmarks) {
 	input[name="${safeName}"].active ~ * ul.${safeName} {
 		display: block;
 	}
+
+	#thumbs:checked ~ input[name="${safeName}"].active ~ .container.links ul.${safeName} {
+		display: flex;
+	}
+
+	
 
 	${folder.children && folder.children.length > 0
 		? (listBookmarkStyles(folder.children))
@@ -33,7 +42,7 @@ function listBookmarkStyles(bookmarks) {
 
 function listBookmarkToggle(bookmarks) {
 	return (bookmarks || []).map(folder => {
-		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '_')
 		return `<input class="folder-toggle" type="checkbox" id="${safeName}" name="${safeName}" />
 				${folder.children && folder.children.length > 0
 					? (listBookmarkToggle(folder.children))
@@ -44,11 +53,12 @@ function listBookmarkToggle(bookmarks) {
 
 function listBookmarkLinks(bookmarks) {
 	return (bookmarks || []).map(folder => {
-		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '_')
 		return `
 	<ul class="${safeName}">
 		${folder.links ? (folder.links.map(link => {
-			return `<li><a href="${link.url}" target="_blank">
+			return `<li style="background-image:url('${SCREENSHOT_URL}/${encodeURIComponent(link.url)}');">
+			<a href="${link.url}" target="_blank">
 				${link.title}</a></li>`
 		}).join('\n')) : ''}
 	</ul>
@@ -61,7 +71,7 @@ function listBookmarkLinks(bookmarks) {
 
 function listBookmarkFolders(bookmarks, level) {
 	return (bookmarks || []).map(folder => {
-		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '_')
 		return `
 		<li><label for="${safeName}">${folder.folder}</label>
     ${folder.children && folder.children.length > 0
@@ -199,6 +209,27 @@ function loadContent(req, res, next) {
 	return next()
 }
 
+async function getScreenshot(req, res, next) {
+	const url = req.originalUrl.substr(SCREENSHOT_URL.length + 1)
+	const decodedUrl = decodeURIComponent(url)
+	const filePath = decodedUrl.replace(NON_ALPHA_NUM, '_')
+	const outputPath = path.join(OUTPUT, filePath + '.png')
+	if(!fs.existsSync(outputPath)) {
+		const browser = await puppeteer.launch()
+		const page = await browser.newPage()
+		console.log(decodedUrl)
+		await page.goto(decodedUrl)
+		const temporaryKey = randomKey(16)
+		await page.screenshot({
+			path: path.join(OUTPUT, temporaryKey + '.png'),
+			fullPage: true
+		})
+		browser.close()
+		fs.renameSync(path.join(OUTPUT, temporaryKey + '.png'), outputPath)
+	}
+	return res.sendFile(outputPath)
+}
+
 // TODO: PUT 405 error from NPM's `live-server`, no workaround listed, too complicated, not worth fighting about or fixing, good for simply static pages, not good for developing a server-side function
 
 
@@ -208,6 +239,7 @@ function startServer() {
 	app.set('etag', 'weak')
 	app.use(express.json())
 	app.use(loadContent)
+	app.use(SCREENSHOT_URL, getScreenshot)
 	app.put(SAVE_URL, uploadFile)
 
 	// TODO: nuance, none of these options work anymore, everything is broken, npm is infected or too much complexity to keep track of? why do so many tutorials have bad instructions? I must be living in some alternate reality of hell, https://stackoverflow.com/questions/10867052/cannot-serve-static-files-with-express-routing-and-no-trailing-slash
