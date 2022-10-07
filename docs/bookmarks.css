@@ -253,7 +253,8 @@ label[for="upload"] {
 }
 
 #list:checked ~ .container.upload,
-.container.folder {
+.container.folder,
+.container.links {
   display:none;
 }
 
@@ -268,7 +269,46 @@ label[for="upload"] {
   height: auto;
 }
 
-#list:checked ~ .container.folder {
+.container.links {
+  text-align: left;
+  position:absolute;
+  left:250px;
+  right: 0;
+  bottom: 0;
+  top: 150px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.container.links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display:none;
+}
+
+.container.links li {
+  border-bottom: 1px solid #999;
+  padding-bottom: 3px;
+  max-width: 100%;
+}
+
+.container.links a {
+  display: block;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  background-color:rgb(78, 78, 104);
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#list:checked ~ .container.folder,
+#list:checked ~ .container.links {
   display:block;
 }
 

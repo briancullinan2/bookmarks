@@ -8,6 +8,12 @@ function chromeDtToDate(st_dt) {
 	return new Date(past + millis);
 }
 
+// I guess I owe this an explaination, this is basically a list of queries to run,
+//   but making it recursive makes it look more advanced, anything surrounded by 
+//   [] generates a list of results
+//   anything surrounded by {} generates an object of results where the values 
+//   are the query and the keys are the object property names
+
 const BOOKMARKS_TREE = [
 	'*/*/dl/dt[./h3]', // select all the headings
 	function parseBookmarks(ctx) {

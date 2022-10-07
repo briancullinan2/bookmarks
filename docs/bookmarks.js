@@ -115,11 +115,28 @@ if(typeof window != 'undefined') {
     })
     */
 
-    dropzone.addEventListener("drop",function (ev) {
+    dropzone.addEventListener("drop", function (ev) {
       ev.preventDefault()
       dropzone.classList.remove('dragging')
       uploadFiles(ev)
     })
+
+    let folders = document.getElementById('bookmark-folders')
+    let previousSelection
+
+    document.addEventListener('click', function (ev) {
+      if(ev.target.tagName == 'LABEL' && ev.path.includes(folders)) {
+        if(previousSelection) {
+          previousSelection.classList.remove('active')
+        }
+
+        let elementId = ev.target.getAttribute('for')
+        let inputCheck = document.getElementById(elementId)
+        inputCheck.classList.add('active')
+        previousSelection = inputCheck
+      }
+    })
+
 
   })
 

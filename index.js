@@ -19,6 +19,11 @@ function listBookmarkStyles(bookmarks) {
 	input[name="${safeName}"]:checked ~ * label[for="${safeName}"] + ol {
 		display: block;
 	}
+
+	input[name="${safeName}"].active ~ * ul.${safeName} {
+		display: block;
+	}
+
 	${folder.children && folder.children.length > 0
 		? (listBookmarkStyles(folder.children))
 		: ''}`
@@ -33,6 +38,23 @@ function listBookmarkToggle(bookmarks) {
 				${folder.children && folder.children.length > 0
 					? (listBookmarkToggle(folder.children))
 					: ''}`
+	}).join('\n')
+}
+
+
+function listBookmarkLinks(bookmarks) {
+	return (bookmarks || []).map(folder => {
+		let safeName = folder.folder.replace(NON_ALPHA_NUM, '-')
+		return `
+	<ul class="${safeName}">
+		${folder.links ? (folder.links.map(link => {
+			return `<li><a href="${link.url}" target="_blank">
+				${link.title}</a></li>`
+		}).join('\n')) : ''}
+	</ul>
+	${folder.children && folder.children.length > 0
+		? (listBookmarkLinks(folder.children))
+		: ''}`
 	}).join('\n')
 }
 
@@ -79,7 +101,7 @@ function renderIndex() {
 	let bookmarks = getBookmarks()
 	let index = INDEX
 
-	let bodyTag = index.match(/<ol class="bookmarks"[\n\r.^>]*?>/i)
+	let bodyTag = index.match(/<ol class="bookmarks"[^>]*?>/i)
 	let offset = bodyTag.index
 	index = index.substring(0, offset + bodyTag[0].length)
 		+ listBookmarkFolders(bookmarks) 
@@ -95,6 +117,12 @@ function renderIndex() {
 	offset = bodyTag.index
 	index = index.substring(0, offset)
 		+ listBookmarkToggle(bookmarks)
+		+ index.substring(offset + bodyTag[0].length, index.length)
+
+	bodyTag = index.match(/<ul class="links"[\n\r.^>]*?>/i)
+	offset = bodyTag.index
+	index = index.substring(0, offset)
+		+ listBookmarkLinks(bookmarks) 
 		+ index.substring(offset + bodyTag[0].length, index.length)
 
 
